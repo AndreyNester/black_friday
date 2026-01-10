@@ -107,7 +107,7 @@ EOF
 docker compose exec -T mongos mongosh --port 27017 --quiet <<'EOF'
 use somedb
 for (let i = 0; i < 2000; i++) {
-  db.helloDoc.insertOne({ n: i, createdAt: new Date() })
+  db.helloDoc.insertOne({age:i, name:"ly"+i})
 }
 db.helloDoc.countDocuments()
 EOF
